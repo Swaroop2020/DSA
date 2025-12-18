@@ -5,7 +5,7 @@ public class DutchNationalFlag {
     public int[] calculate(int[] array){
 
         int low = 0, mid=0, high = array.length-1;
-        while(mid<high){
+        while(mid<=high){
             switch(array[mid]){
                 case 0:
                     swap(low, mid, array);

@@ -1,10 +1,11 @@
 package org.example;
 
-import org.example.easy.RemoveDuplicates;
-import org.example.easy.TwoSum;
+import org.example.easy.*;
 import org.example.hard.RainWaterTrap;
+import org.example.medium.ThreeSum;
 
 import java.util.Arrays;
+import java.util.DuplicateFormatFlagsException;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -14,6 +15,10 @@ public class Main {
         RainWaterTrap rainWaterTrap = new RainWaterTrap();
         TwoSum twoSum = new TwoSum();
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        MoveZerosAndNegatives mzan = new MoveZerosAndNegatives();
+        DutchNationalFlag dutchNational = new DutchNationalFlag();
+
+        ThreeSum threesum = new ThreeSum();
 
         int[] array = new int[]{0,1,0,2,1,0,1,3,2,1,2,1,2};
 
@@ -34,7 +39,23 @@ public class Main {
 
         System.out.println("------------ Dutch National Flag  ---------------");
         array = new int[]{2,0,2,1,1,0};
+        dutchNational.calculate(array);
+        System.out.println(Arrays.toString(array));
+        /// special case.
+        array = new int[]{1,0};
+        dutchNational.calculate(array);
+        System.out.println(Arrays.toString(array));
 
+
+        System.out.println("------------ Move zeros and negatives  ---------------");
+        array = new int[]{3,2,-1,0,4,3};
+        mzan.move(array);
+        System.out.println(Arrays.toString(array));
+
+        System.out.println("------------ Three Sum ---------------");
+        array = new int[]{-1,0,1,2,-1,-4};
+        System.out.println(threesum.calculate(array,0));
+        System.out.println(threesum.betterCalculate(array,0));
 
     }
 }
