@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.easy.*;
 import org.example.hard.RainWaterTrap;
+import org.example.hard.RainWaterTrapped;
+import org.example.medium.ContainerWithMostWater;
 import org.example.medium.ThreeSum;
 
 import java.util.Arrays;
@@ -17,14 +19,21 @@ public class Main {
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
         MoveZerosAndNegatives mzan = new MoveZerosAndNegatives();
         DutchNationalFlag dutchNational = new DutchNationalFlag();
+        ContainerWithMostWater cwmw = new ContainerWithMostWater();
+        RainWaterTrapped rainWaterTrapped = new RainWaterTrapped();
+        LongestSubStringWNRChars lsswnrc = new LongestSubStringWNRChars();
 
         ThreeSum threesum = new ThreeSum();
 
         int[] array = new int[]{0,1,0,2,1,0,1,3,2,1,2,1,2};
+        int[] arr = new int[]{3,0,3};
 
-        System.out.println("--- Rain Water Trapped ---");
-        System.out.println("Array: " + Arrays.toString(array));
-        System.out.println("Total Water Trapped : " + rainWaterTrap.calculate(array) + " units");
+        ///  arr is a special case for RainWater trap which fails for while(l<r)
+        ///  need to use while(l<=r) always
+        System.out.println("------------ Rain Water Trapped ------------");
+        System.out.println("Array: " + Arrays.toString(arr));
+        System.out.println("Total Water Trapped : " + rainWaterTrapped.calculate(array) + " units");
+        System.out.println("Approach 2 : "+rainWaterTrapped.calculate2(array)+" units");
 
         array = new int[]{1, 2, 3, 4, 6};
         System.out.println("------------ two sum ---------------");
@@ -57,5 +66,13 @@ public class Main {
         System.out.println(threesum.calculate(array,0));
         System.out.println(threesum.betterCalculate(array,0));
 
+        System.out.println("------------ Container With More Water ---------------");
+        array = new int[]{3,5,4,2,5};
+        int result = cwmw.calculate(array);
+        System.out.println("result : "+result);
+
+        System.out.println("------------ Longest SubString with non repeating characters ---------------");
+        System.out.println("Approach 1: "+lsswnrc.calculate("wke"));
+        System.out.println("Better Approach : "+lsswnrc.betterCalculate("wke"));
     }
 }

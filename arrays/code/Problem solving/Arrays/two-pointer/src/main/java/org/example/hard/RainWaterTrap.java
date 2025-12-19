@@ -11,7 +11,7 @@ public class RainWaterTrap {
         int rmax = array[array.length-1];
         int l=1, r=array.length-2;
         int waterStored = 0;
-        while(l<r){
+        while(l<=r){
 
             lmax = Math.max(array[l],lmax);
             rmax = Math.max(array[r],rmax);
