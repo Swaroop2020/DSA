@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.easy.*;
+import org.example.hard.MinWindowSubString;
 import org.example.hard.RainWaterTrap;
 import org.example.hard.RainWaterTrapped;
 import org.example.medium.ContainerWithMostWater;
@@ -22,6 +23,7 @@ public class Main {
         ContainerWithMostWater cwmw = new ContainerWithMostWater();
         RainWaterTrapped rainWaterTrapped = new RainWaterTrapped();
         LongestSubStringWNRChars lsswnrc = new LongestSubStringWNRChars();
+        MinWindowSubString mwss = new MinWindowSubString();
 
         ThreeSum threesum = new ThreeSum();
 
@@ -74,5 +76,12 @@ public class Main {
         System.out.println("------------ Longest SubString with non repeating characters ---------------");
         System.out.println("Approach 1: "+lsswnrc.calculate("wke"));
         System.out.println("Better Approach : "+lsswnrc.betterCalculate("wke"));
+        System.out.println("----------------------------------------------------------------------------");
+
+
+        System.out.println("--------------  MinWindowSubString  -----------------------");
+        System.out.println(mwss.betterCalculate("ADOBECODEBANC", "ABC"));
+        System.out.println("-----------------------------------------------------------");
+
     }
 }
