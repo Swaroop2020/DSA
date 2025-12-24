@@ -4,6 +4,7 @@ import org.example.easy.*;
 import org.example.hard.MinWindowSubString;
 import org.example.hard.RainWaterTrap;
 import org.example.hard.RainWaterTrapped;
+import org.example.hard.SubArraysWithKDiffIntegers;
 import org.example.medium.ContainerWithMostWater;
 import org.example.medium.ThreeSum;
 
@@ -24,6 +25,7 @@ public class Main {
         RainWaterTrapped rainWaterTrapped = new RainWaterTrapped();
         LongestSubStringWNRChars lsswnrc = new LongestSubStringWNRChars();
         MinWindowSubString mwss = new MinWindowSubString();
+        SubArraysWithKDiffIntegers sawdi = new SubArraysWithKDiffIntegers();
 
         ThreeSum threesum = new ThreeSum();
 
@@ -81,6 +83,10 @@ public class Main {
 
         System.out.println("--------------  MinWindowSubString  -----------------------");
         System.out.println(mwss.betterCalculate("ADOBECODEBANC", "ABC"));
+        System.out.println("-----------------------------------------------------------");
+
+        System.out.println("--------------  subarrays with k-different integers  -----------------------");
+        System.out.println(sawdi.calculate(new int[]{1,2,1,2,3},2));
         System.out.println("-----------------------------------------------------------");
 
     }
