@@ -52,47 +52,45 @@ public class MinWindowSubString {
     }
 
     ///  Here we are using an array for frequencies
-    public String betterCalculate(String s, String t) {
-        if (s == null || t == null || s.length() < t.length()) {
-            return "";
-        }
+    public String betterCalculate(String str1, String str2) {
+        int n1 = str1.length();
+        int n2 = str2.length();
 
-        // Frequency arrays for ASCII characters
-        int[] need = new int[128];
-        int[] window = new int[128];
+        if (n2 > n1) return "";
 
-        // Fill the 'need' array and count unique characters required
+        int[] freqTarget = new int[128];
+        int[] freqWindow = new int[128];
+
         int required = 0;
-        for (char c : t.toCharArray()) {
-            if (need[c] == 0) required++;
-            need[c]++;
+        for (char c : str2.toCharArray()) {
+            if (freqTarget[c] == 0) required++; // Count unique characters needed
+            freqTarget[c]++;
         }
 
-        int left = 0, right = 0, formed = 0;
-        int minLen = Integer.MAX_VALUE;
-        int start = 0;
+        int minLen = n1 + 1;
+        int left = 0, right = 0, formed = 0, start = 0;
 
-        while (right < s.length()) {
-            char c = s.charAt(right);
-            window[c]++;
+        while (right < n1) {
+            char c = str1.charAt(right);
+            freqWindow[c]++;
 
-            // If the current character count matches the required count
-            if (need[c] > 0 && window[c] == need[c]) {
+            // Only increment formed if we've met the EXACT count for a specific character
+            if (freqTarget[c] > 0 && freqWindow[c] == freqTarget[c]) {
                 formed++;
             }
 
-            // Try to shrink the window from the left
-            while (formed == required) {
+            while (left <= right && formed == required) {
                 if (right - left + 1 < minLen) {
                     minLen = right - left + 1;
                     start = left;
                 }
 
-                char l = s.charAt(left);
-                window[l]--;
+                char leftChar = str1.charAt(left);
+                freqWindow[leftChar]--;
 
-                // If removing the character makes the window invalid
-                if (need[l] > 0 && window[l] < need[l]) {
+                // FIX: Only decrement formed if this char was required
+                // AND we now have less than the required amount.
+                if (freqTarget[leftChar] > 0 && freqWindow[leftChar] < freqTarget[leftChar]) {
                     formed--;
                 }
                 left++;
@@ -100,6 +98,6 @@ public class MinWindowSubString {
             right++;
         }
 
-        return minLen == Integer.MAX_VALUE ? "" : s.substring(start, start + minLen);
+        return minLen == n1 + 1 ? "" : str1.substring(start, start + minLen);
     }
 }

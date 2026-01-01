@@ -3,7 +3,10 @@ package org.example;
 import org.example.service.MergeAlternately;
 import org.example.service.Palindrome;
 import org.example.service.SubSequence;
+import org.example.service.hard.MinWindowSubString;
 import org.example.service.medium.StringCompression;
+import org.example.service.medium.StringPermutation;
+import org.example.service.medium.VersionComparision;
 import org.example.service.reverse.*;
 
 import java.util.Arrays;
@@ -26,6 +29,9 @@ public class Main {
         SubSequence subSequence = new SubSequence();
         MergeAlternately mergeAlternately = new MergeAlternately();
         StringCompression stringCompression = new StringCompression();
+        StringPermutation stringPermutation = new StringPermutation();
+        VersionComparision versionComparision = new VersionComparision();
+        MinWindowSubString minWindowSubString = new MinWindowSubString();
 
         /// Reverse a String
         ///  This doesn't work for emojis
@@ -94,6 +100,25 @@ public class Main {
 
         char[] array = new char[]{'a','a','b','b','c','c','c'};
         System.out.println(" String compressed for array "+ Arrays.toString(array)+" is having size : "+stringCompression.compress(array));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+
+        str4 = "ab";
+        str5 = "eidbaooo";
+
+        System.out.println(" Does string : "+str5+" has a permutation of : "+str4+" ?? "+stringPermutation.checkInclusion(str4,str5));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+        str4 = "1.101";
+        str5 = "1.01001";
+        System.out.println(" Comparing versions "+str4+" and "+str5+" gives : "+versionComparision.compare(str4, str5));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+
+        str4 = "ADOBECODEBANC";
+        str5 = "ABC";
+
+        System.out.println("Min window subString of "+str5+" in "+str4+" is :"+minWindowSubString.betterCalculate(str4, str5));
 
     }
 }
