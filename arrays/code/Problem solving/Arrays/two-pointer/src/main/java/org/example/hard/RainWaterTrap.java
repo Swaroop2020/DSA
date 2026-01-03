@@ -7,22 +7,20 @@ public class RainWaterTrap {
         // Edge case
         if (array == null || array.length < 3) return 0;
 
+        int i=1, j= array.length-2;
+        int waterStored = 0;
         int lmax = array[0];
         int rmax = array[array.length-1];
-        int l=1, r=array.length-2;
-        int waterStored = 0;
-        while(l<=r){
-
-            lmax = Math.max(array[l],lmax);
-            rmax = Math.max(array[r],rmax);
+        while(i<=j){
+            lmax = Math.max(lmax, array[i]);
+            rmax = Math.max(rmax, array[j]);
             if(lmax<rmax){
-                waterStored+=lmax - array[l];
-                l++;
+                waterStored+=lmax-array[i];
+                i++;
             }else{
-                waterStored+=rmax- array[r];
-                r--;
+                waterStored+=rmax-array[j];
+                j--;
             }
-
         }
         return waterStored;
     }

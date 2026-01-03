@@ -3,7 +3,10 @@ package org.example;
 import org.example.service.MergeAlternately;
 import org.example.service.Palindrome;
 import org.example.service.SubSequence;
+import org.example.service.easy.ValidPalindrome2;
 import org.example.service.hard.MinWindowSubString;
+import org.example.service.hard.UniqueCharsOfAllSubStrings;
+import org.example.service.medium.SplitStringsToMakePalindrome;
 import org.example.service.medium.StringCompression;
 import org.example.service.medium.StringPermutation;
 import org.example.service.medium.VersionComparision;
@@ -32,6 +35,9 @@ public class Main {
         StringPermutation stringPermutation = new StringPermutation();
         VersionComparision versionComparision = new VersionComparision();
         MinWindowSubString minWindowSubString = new MinWindowSubString();
+        ValidPalindrome2 validPalindrome2 = new ValidPalindrome2();
+        UniqueCharsOfAllSubStrings uniqueCharsOfAllSubStrings = new UniqueCharsOfAllSubStrings();
+        SplitStringsToMakePalindrome splitStringsToMakePalindrome = new SplitStringsToMakePalindrome();
 
         /// Reverse a String
         ///  This doesn't work for emojis
@@ -119,6 +125,22 @@ public class Main {
         str5 = "ABC";
 
         System.out.println("Min window subString of "+str5+" in "+str4+" is :"+minWindowSubString.betterCalculate(str4, str5));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+
+        str5 = "eceec";
+        System.out.println("is Valid Palindrome : "+validPalindrome2.isPalindrome(str5));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+        str5 = "LEETCODE";
+        System.out.println(" Total number of Unique chars in String "+str5+" are : "+uniqueCharsOfAllSubStrings.calculate(str5));
+
+        System.out.println("------------------------------------------------------------------------------ ");
+
+        str4 = "abcDExyz";
+        str5 = "123LLcba";
+
+        System.out.println(" Can we Split and make the Strings "+str4+" & "+str5+"a Palindrome ? "+splitStringsToMakePalindrome.checkPalindromeFormation(str4, str5));
 
     }
 }
