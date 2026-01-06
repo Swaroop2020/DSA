@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.hard.SlidingWindowMax;
+import org.example.hard.SubArraysWithExactlyKDifferentElements;
 import org.example.service.KadanesAlgorithm;
 
 import java.lang.reflect.Array;
@@ -12,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         SlidingWindowMax swm = new SlidingWindowMax();
         KadanesAlgorithm kadanes = new KadanesAlgorithm();
+        SubArraysWithExactlyKDifferentElements subArraysWithExactlyKDifferentElements = new SubArraysWithExactlyKDifferentElements();
 
         System.out.println("----------- Sliding Window Max -------------");
         int[] array = new int[]{1,3,-1,-3,5,3,6,7};
@@ -21,5 +23,12 @@ public class Main {
         System.out.println("----------- Kadanes Algorithm -------------");
         System.out.println(kadanes.calculate(array));
         System.out.println("--------------------------------------------");
+
+        array = new int[]{1,2,1,2,3};
+        int k=2;
+        System.out.println("------------- SubArraysWithExactlyKDifferentElements ------------");
+        System.out.println(subArraysWithExactlyKDifferentElements.calculate(array,k));
+        System.out.println("----------------------------------------------------------------");
+
     }
 }
