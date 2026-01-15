@@ -13,6 +13,7 @@ public class Main {
         AllAnagramsInAString allAnagramsInAString = new AllAnagramsInAString();
         LongestRepeatingCharReplacement longestRepeatingCharReplacement = new LongestRepeatingCharReplacement();
         MaxVowelsInSubStringOfSizeK maxVowelsInSubStringOfSizeK = new MaxVowelsInSubStringOfSizeK();
+        ValidateIPAddress validateIPAddress = new ValidateIPAddress();
 
         String divider = "----------------------------------------------------------------------";
 
@@ -48,5 +49,7 @@ public class Main {
 
         System.out.println(divider);
 
+        str = "192.83.12.12";
+        System.out.println("Is "+str+" a valid ip Address ? "+validateIPAddress.validate(str));
     }
 }
