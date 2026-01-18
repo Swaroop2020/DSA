@@ -1,10 +1,8 @@
 package org.example;
 
+import org.example.service.easy.IsomorphicStrings;
 import org.example.service.hard.ValidNumber;
-import org.example.service.medium.GroupingAnagrams;
-import org.example.service.medium.MatchingSubsequences;
-import org.example.service.medium.MaxNumberOfNonIntersectingSubStrings;
-import org.example.service.medium.StringToInteger;
+import org.example.service.medium.*;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
@@ -18,6 +16,8 @@ public class Main {
         GroupingAnagrams groupingAnagrams = new GroupingAnagrams();
         MatchingSubsequences matchingSubsequences = new MatchingSubsequences();
         MaxNumberOfNonIntersectingSubStrings mnnss = new MaxNumberOfNonIntersectingSubStrings();
+        IsomorphicStrings isomorphicStrings = new IsomorphicStrings();
+        RepeatedString repeatedString = new RepeatedString();
 
         String str = ".";
         System.out.println(" Is valid number "+str+" ?"+validNumber.isValidNumber(str));
@@ -38,7 +38,19 @@ public class Main {
         divide();
         //matchingSubsequences.countMatches();
 
-        System.out.println(mnnss.maxSubstrings("abcdeafdef"));
+        str = "abcdeafdef";
+        System.out.println(" Max number of non intersecting sub-strings in string "+str+" are : "+mnnss.maxSubstrings(str));
+
+        divide();
+
+        String str1 = "paper";
+        String str2 = "title";
+        System.out.println(" Are Strings "+str1+" & "+str2+" are Isometric ? "+isomorphicStrings.isIsomorphic(str1, str2));
+        divide();
+
+        str1="abca";
+        long n = 10;
+        System.out.println(" Totals number of a's in the first "+n+" chars when repeated infinite times is: "+repeatedString.calculate(str1, n));
     }
 
     static void divide(){
