@@ -15,4 +15,23 @@ public class JumpGame {
         }
         return false;
     }
+
+    public boolean canJumpAgain(int[] nums) {
+        int farthest = 0;
+
+        for(int i = 0; i < nums.length; i++) {
+
+            if(i > farthest) {
+                return false;  // we can't even reach here
+            }
+
+            farthest = Math.max(farthest, i + nums[i]);
+
+            if(farthest >= nums.length - 1) {
+                return true;
+            }
+        }
+
+        return true;
+    }
 }
