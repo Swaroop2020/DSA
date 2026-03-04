@@ -1,9 +1,12 @@
-package org.example.service;
+package org.example.service.medium;
 
 import java.util.Arrays;
 
 /// Leetcode : 435
 public class NonOverlappingIntervals {
+
+    /// Time Complexity : O(nlogn), for sorting
+    /// space Complexity : O(logn), this would be space used for recursion stack, in quick/merge sort.
     public int eraseOverlapIntervals(int[][] intervals) {
         int removals = 0;
         Arrays.sort(intervals, (a,b)->a[1]-b[1]);

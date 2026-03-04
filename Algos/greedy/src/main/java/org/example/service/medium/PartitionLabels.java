@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.medium;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +7,9 @@ import java.util.List;
 /// Leetcode 763
 public class PartitionLabels {
 
+    /// Time Complexity : O(n),  we parse the string twice so O(n)+O(n).
+    /// Space Complexity : O(1), HashMap is used to store all the characters frequency.
+    ///  characters are fixed to length 128 (ASCII) So it's constant space.
     public List<Integer> calculate(String s){
         int length = s.length();
         HashMap<Character, Integer> map = new HashMap<>();

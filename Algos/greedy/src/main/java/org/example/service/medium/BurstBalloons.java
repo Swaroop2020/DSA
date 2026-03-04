@@ -1,9 +1,12 @@
-package org.example.service;
+package org.example.service.medium;
 
 import java.util.Arrays;
 
 /// Leetcode : 452
 public class BurstBalloons {
+
+    /// Time Complexity : O(nlogn)
+    /// Space Complexity : O(n) // Timsort takes O(n) space, in worst case to store temporary runs.
     public int findMinArrowShots(int[][] points) {
         if(points.length==0) return 0;
         Arrays.sort(points,(x, y)->Integer.compare(x[1],y[1]));

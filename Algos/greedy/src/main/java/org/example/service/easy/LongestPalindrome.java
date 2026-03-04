@@ -1,8 +1,10 @@
-package org.example.service;
+package org.example.service.easy;
 
 /// Leetcode : 409
 public class LongestPalindrome {
 
+    /// Time Complexity : O(n)
+    /// Space Complexity : O(1)
     public int CalculateLongestPalindrome(String s) {
         int[] freq = new int[128];
         for(char c : s.toCharArray()){

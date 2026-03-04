@@ -1,7 +1,10 @@
-package org.example.service;
+package org.example.service.easy;
 
 /// Leetcode 392
 public class IsSubsequence {
+
+    /// Time Complexity : O(n)
+    /// Space Complexity : O(1)
     public boolean isSubsequence(String s, String t) {
         int i=0, j=0;
         while(i<s.length() && j<t.length()){

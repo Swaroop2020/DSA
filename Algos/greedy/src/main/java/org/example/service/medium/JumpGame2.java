@@ -1,8 +1,11 @@
-package org.example.service;
+package org.example.service.medium;
 
 
 /// Leetcode : 45
 public class JumpGame2 {
+
+    /// Time Complexity : O(n) linear scan
+    /// space Complexity : O(1) constant space
     public int jump(int[] nums){
         int jumps=0;
         int farthest =0;
