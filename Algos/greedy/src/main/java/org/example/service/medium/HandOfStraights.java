@@ -1,9 +1,12 @@
-package org.example.service;
+package org.example.service.medium;
 
 import java.util.TreeMap;
 
+/// Leetcode : 846
 public class HandOfStraights {
 
+    /// Time Complexity: O(nlogn), treemap takes O(logn) for each put() operation.
+    /// space Complexity: O(n). treemap size increases as number of elements increases.
     public boolean isNStraightHand(int[] hand, int groupSize) {
         if (hand.length % groupSize != 0) return false;
 

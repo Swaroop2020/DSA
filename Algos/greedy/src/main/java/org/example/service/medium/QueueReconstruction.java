@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +7,10 @@ import java.util.List;
 /// Leetcode : 406
 public class QueueReconstruction {
 
+
+    /// Time Complexity: O(n^2), Because,with in for loop, you use List.add(index, val).
+    /// if everytime we have to insert at 0, we need to shifte each element right.
+    /// Space Complexity : O(n), grows proportional to input size
     public int[][] reconstructQueue(int[][] people) {
         List<int[]> list = new ArrayList<>();
 
