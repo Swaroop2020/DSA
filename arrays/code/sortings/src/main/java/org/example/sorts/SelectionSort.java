@@ -1,5 +1,8 @@
 package org.example.sorts;
 
+/**
+ * time complexity : O(n^2)
+ */
 public class SelectionSort implements  Sorter{
     @Override
     public int[] sort(int[] array){

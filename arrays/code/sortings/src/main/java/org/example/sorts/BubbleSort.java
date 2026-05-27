@@ -1,5 +1,8 @@
 package org.example.sorts;
 
+/**
+ * time complexity: O(n^2)
+ */
 public class BubbleSort implements Sorter{
 
     @Override

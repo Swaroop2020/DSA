@@ -1,5 +1,11 @@
 package org.example.sorts;
 
+/**
+ * time complexity:
+ *      best : O(n)  // all the elements are sorted
+ *      worst: O(n^2)
+ *      avg : O(n^2)
+ */
 public class InsertionSort implements Sorter{
 
     @Override

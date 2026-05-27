@@ -3,6 +3,12 @@ package org.example.sorts;
 
 import java.util.Arrays;
 
+/**
+ * Time Complexity :  O(n logn)
+ *      at each level split n, n/2, n/4...
+ *      and merge n comparisions
+ * Space : O(n) // extra space for temp array
+ */
 public class MergeSort implements Sorter{
 
 
