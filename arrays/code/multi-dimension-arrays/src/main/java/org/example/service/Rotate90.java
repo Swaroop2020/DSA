@@ -1,24 +1,36 @@
 package org.example.service;
 
+/**
+ * Explaination from Nikhil Lohia
+ * https://www.youtube.com/watch?v=Ux058jpRB9Y&t=719s
+ *
+ */
 public class Rotate90 {
 
     public int[][] rotate(int[][] matrix){
-        int n = matrix.length;
-        for(int i=0;i<n/2;i++){
-            for(int j=0;j<n/2;j++){
 
+        int n = matrix.length;
+
+        for(int i=0; i<(n+1)/2; i++){
+
+            for(int j=0; j<n/2; j++){
+
+                //temp = bottom left
                 int temp = matrix[n-1-j][i];
 
+                //bottom left = bottom right
                 matrix[n-1-j][i] = matrix[n-1-i][n-1-j];
+                //bottom right = top right
+                matrix[n-1-i][n-1-j] = matrix[j][n-1-i];
 
-                matrix[n-1-i][n-1-j] = matrix[j][n-i-1];
-
-                matrix[j][n-i-1] = matrix[i][j];
-
+                //top right = top left
+                matrix[j][n-1-i] = matrix[i][j];
+                // top left = temp
                 matrix[i][j] = temp;
 
             }
         }
+
         return matrix;
     }
 
